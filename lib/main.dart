@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c10/ui/chapterDetails/ChapterDetailsScreen.dart';
+import 'package:islami_c10/ui/headethDetails/HadethDetails.dart';
 import 'package:islami_c10/ui/homeScreen/HomeScreen.dart';
 import 'package:islami_c10/ui/splash/SplashScreen.dart';
 
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashScreen.routeName: (_) => SplashScreen(),
         HomeScreen.routeName: (_) => HomeScreen(),
+        HadethDetailsScreen.routeName: (_) => HadethDetailsScreen(),
         ChapterDetailsScreen.routeName: (_) => ChapterDetailsScreen()
       },
     );
