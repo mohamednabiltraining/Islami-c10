@@ -40,6 +40,16 @@ class MyApp extends StatelessWidget {
           primary: Color(0xFFB7935F),
         ),
         useMaterial3: true,
+        iconTheme: IconThemeData(
+          color: Color(0xFFB7935F),
+          size:50,
+        ),
+        textTheme: TextTheme(
+          titleMedium: TextStyle(
+            color: Colors.black,
+            fontSize: 25,
+          ),
+        )
       ),
       initialRoute: SplashScreen.routeName,
       routes: {
