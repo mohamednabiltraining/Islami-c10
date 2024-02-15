@@ -25,24 +25,21 @@ class RadioTab extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               GestureDetector(
-                onTap: () {}, // Image tapped
+                onTap: () {},
                 child: Image.asset(
                   'assets/images/ic_previous.png',
-                  fit: BoxFit.cover, // Fixes border issues
                 ),
               ),
               GestureDetector(
-                onTap: () {}, // Image tapped
+                onTap: () {},
                 child: Image.asset(
                   'assets/images/ic_play.png',
-                  fit: BoxFit.cover, // Fixes border issues
                 ),
               ),
               GestureDetector(
-                onTap: () {}, // Image tapped
+                onTap: () {},
                 child: Image.asset(
                   'assets/images/ic_next.png',
-                  fit: BoxFit.cover, // Fixes border issues
                 ),
               ),
             ],
