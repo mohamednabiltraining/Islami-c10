@@ -26,7 +26,7 @@ class _SebhaTabState extends State<TasbehTab> {
   void _incrementCounter() {
     setState(() {
       _counter++;
-      if (_counter == 33) {
+      if (_counter == 34) {
         _counter = 0;
         _currentAzkarIndex = (_currentAzkarIndex + 1) % _azkar.length;
       }
@@ -45,28 +45,29 @@ class _SebhaTabState extends State<TasbehTab> {
           SizedBox(
             width: 300,
             height: 300,
-            child: SebhaStack(turns: _turns),
+            child: GestureDetector(
+                onTap: () {
+                  _incrementCounter();
+                  _turns += 0.03;
+                  setState(() {});
+                },
+                child: SebhaStack(turns: _turns)),
           ),
           Text(
             "Tasbeh Count",
-            style: Theme.of(context).textTheme.titleMedium,
+            style: Theme.of(context).textTheme.labelMedium,
             textAlign: TextAlign.center,
           ),
           const SizedBox(
             height: 20,
           ),
-          MaterialButton(
-            minWidth: 69,
+          Container(
+            alignment: Alignment.center,
+            width: 69,
             height: 81,
-            color: const Color(0xffcab497),
-            shape: OutlineInputBorder(
-                borderSide: BorderSide.none,
+            decoration: BoxDecoration(
+                color: const Color(0xffcab497),
                 borderRadius: BorderRadius.circular(25)),
-            onPressed: () {
-              _incrementCounter();
-              _turns += 0.03;
-              setState(() {});
-            },
             child: Text(
               "$_counter",
               style: const TextStyle(

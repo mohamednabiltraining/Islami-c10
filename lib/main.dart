@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        textTheme: TextTheme(
+            labelMedium: TextStyle(fontSize: 25, fontWeight: FontWeight.w600)),
         cardTheme: CardTheme(
             color: Colors.white,
             elevation: 12,
