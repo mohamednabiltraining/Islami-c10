@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_c10/ui/homeScreen/hadeth/HadethTab.dart';
 import 'package:islami_c10/ui/homeScreen/quran/QuranTab.dart';
 import 'package:islami_c10/ui/homeScreen/radio/RadioTab.dart';
@@ -31,8 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Scaffold(
             appBar: AppBar(
               title: Text(
-                "Islami",
-              ),
+                  AppLocalizations.of(context)!.appTitle),
             ),
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: selectedTabIndex,
@@ -45,19 +45,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
                     icon: ImageIcon(AssetImage('assets/images/ic_moshaf.png')),
-                    label: 'Quran'),
+                    label: AppLocalizations.of(context)!.quran_tab),
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
                     icon: ImageIcon(AssetImage('assets/images/ic_hadeth.png')),
-                    label: 'Hadeth'),
+                    label: AppLocalizations.of(context)!.hadeth_tab),
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
                     icon: ImageIcon(AssetImage('assets/images/ic_sebha.png')),
-                    label: 'Tasbeh'),
+                    label: AppLocalizations.of(context)!.tasbeh_tab),
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
                     icon: ImageIcon(AssetImage('assets/images/ic_radio.png')),
-                    label: 'Radio'),
+                    label: AppLocalizations.of(context)!.radio_tab),
               ],
             ),
             body: tabs[selectedTabIndex]));
