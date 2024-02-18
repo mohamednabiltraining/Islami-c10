@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c10/ui/MyThemeData.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_c10/ui/homeScreen/hadeth/HadethTab.dart';
 import 'package:islami_c10/ui/homeScreen/quran/QuranTab.dart';
@@ -24,9 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(
-                "assets/images/main_background.jpg",
-              ),
+              image: AssetImage(MyThemeData.getMainBackgroundImage()),
               fit: BoxFit.fill),
         ),
         child: Scaffold(
