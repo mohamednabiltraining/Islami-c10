@@ -139,7 +139,7 @@ class QuranTab extends StatelessWidget {
             separatorBuilder: (_, __) => Container(
               height: 1,
               width: double.infinity,
-              color: Theme.of(context).primaryColor,
+              color: Theme.of(context).colorScheme.secondary,
               margin: EdgeInsets.symmetric(horizontal: 64),
             ),
           ),

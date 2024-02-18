@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c10/ui/MyThemeData.dart';
 import 'package:islami_c10/ui/homeScreen/hadeth/Hadeth.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
@@ -14,9 +15,7 @@ class HadethDetailsScreen extends StatelessWidget {
       height: double.infinity,
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(
-              "assets/images/main_background.jpg",
-            ),
+            image: AssetImage(MyThemeData.getMainBackgroundImage()),
             fit: BoxFit.fill),
       ),
       child: Scaffold(
