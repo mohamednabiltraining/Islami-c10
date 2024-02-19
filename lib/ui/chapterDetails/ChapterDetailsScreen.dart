@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami_c10/ui/MyThemeData.dart';
 import 'package:islami_c10/ui/chapterDetails/verseItem.dart';
 
 class ChapterDetailsScreen extends StatefulWidget {
@@ -27,7 +28,7 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                "assets/images/main_background.jpg",
+                MyThemeData.getMainBackgroundImage(),
               ),
               fit: BoxFit.fill),
         ),
