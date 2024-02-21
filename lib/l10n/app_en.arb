@@ -3,5 +3,10 @@
   "quran_tab": "Quran",
   "hadeth_tab": "Hadeth",
   "tasbeh_tab": "Tasbeh",
-  "radio_tab": "Radio"
+  "radio_tab": "Radio",
+  "settings_tab": "Settings",
+  "language": "Language",
+  "theme": "Theme",
+  "dark": "Dark",
+  "light": "Light"
 }

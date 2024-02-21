@@ -3,5 +3,10 @@
   "quran_tab": "القران",
   "hadeth_tab": "الحديث",
   "tasbeh_tab": "التسبيح",
-  "radio_tab": "الاذاعه"
+  "radio_tab": "الاذاعه",
+  "settings_tab": "الاعدادات",
+  "language": "اللغه",
+  "theme": "المظهر",
+  "dark": "ليلي",
+  "light": "نهاري"
 }

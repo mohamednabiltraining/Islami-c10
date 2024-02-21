@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 class MyThemeData {
-  static bool isDarkEnabled = true;
   static const Color primaryLight = Color(0xFFB7935F);
   static const Color primaryDark = Color(0xFF141A2E);
   static const Color secondaryDark = Color(0xFFFACC1D);
   static const String fontMesseri = "messiri";
 
   static final ThemeData light = ThemeData(
+    bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.white),
     textTheme: TextTheme(
         titleLarge: TextStyle(
             fontSize: 25,
@@ -51,6 +51,7 @@ class MyThemeData {
   );
 
   static final ThemeData dark = ThemeData(
+    bottomSheetTheme: BottomSheetThemeData(backgroundColor: primaryDark),
     textTheme: TextTheme(
         titleLarge: TextStyle(
             fontSize: 25,
@@ -91,16 +92,4 @@ class MyThemeData {
         seedColor: primaryDark, primary: primaryDark, secondary: secondaryDark),
     useMaterial3: true,
   );
-
-  static String getMainBackgroundImage() {
-    return MyThemeData.isDarkEnabled
-        ? "assets/images/main_background_dark.png"
-        : "assets/images/main_background.jpg";
-  }
-
-  static String getSplashBackground() {
-    return MyThemeData.isDarkEnabled
-        ? "assets/images/splash_dark.jpg"
-        : "assets/images/splash.jpg";
-  }
 }

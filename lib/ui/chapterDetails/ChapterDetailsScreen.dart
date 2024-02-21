@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami_c10/ui/MyThemeData.dart';
+import 'package:islami_c10/providers/SettingsProvider.dart';
 import 'package:islami_c10/ui/chapterDetails/verseItem.dart';
+import 'package:provider/provider.dart';
 
 class ChapterDetailsScreen extends StatefulWidget {
   static const String routeName = "chapter-details";
@@ -21,6 +22,7 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
         ModalRoute.of(context)?.settings.arguments as ChapterDetailsScreenArgs;
 
     if (versesList.isEmpty) loadChapter(args.index);
+    var provider = Provider.of<SettingsProvider>(context);
 
     return Container(
         width: double.infinity,
@@ -28,7 +30,7 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(
-                MyThemeData.getMainBackgroundImage(),
+                provider.getMainBackgroundImage(),
               ),
               fit: BoxFit.fill),
         ),
