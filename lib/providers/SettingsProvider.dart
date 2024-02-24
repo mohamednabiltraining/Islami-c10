@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsProvider extends ChangeNotifier {
 //  final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -7,11 +8,41 @@ class SettingsProvider extends ChangeNotifier {
 
   SettingsProvider() {
     //Todo:read theme,locale from SharedPreferences
+    getLanguageSharedPreferences();
+    getThemeSharedPreferences();
   }
 
   void changeLanguage(String newLocale) {
     selectedLocale = newLocale;
     //Todo:set lang in shared preferences
+    saveLanguageSharedPreferences('lang', selectedLocale);
+    notifyListeners();
+  }
+
+  saveLanguageSharedPreferences(String key, String value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString(key, value);
+  }
+
+  getLanguageSharedPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    selectedLocale = prefs.getString('lang') ?? "en";
+    notifyListeners();
+  }
+
+  saveThemeSharedPreferences(String key, int value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setInt(key, value);
+  }
+
+  getThemeSharedPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.getInt('theme');
+    if (prefs.getInt('theme') == 1) {
+      selectedTheme = ThemeMode.light;
+    } else {
+      selectedTheme = ThemeMode.dark;
+    }
     notifyListeners();
   }
 
@@ -22,6 +53,7 @@ class SettingsProvider extends ChangeNotifier {
   void changeTheme(ThemeMode newTheme) {
     selectedTheme = newTheme;
     //Todo:set theme in shared preferences
+    saveThemeSharedPreferences('theme', selectedTheme.index);
     notifyListeners();
   }
 
