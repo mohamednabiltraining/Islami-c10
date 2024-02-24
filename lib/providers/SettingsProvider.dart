@@ -8,8 +8,8 @@ class SettingsProvider extends ChangeNotifier {
 
   SettingsProvider() {
     //Todo:read theme,locale from SharedPreferences
-    getLanguageSharedPreferences();
     getThemeSharedPreferences();
+    getLanguageSharedPreferences();
   }
 
   void changeLanguage(String newLocale) {
