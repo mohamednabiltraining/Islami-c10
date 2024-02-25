@@ -17,12 +17,12 @@ class _SettingsTabState extends State<SettingsTab> {
   Widget build(BuildContext context) {
     var settingsProvider = Provider.of<SettingsProvider>(context);
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 64, horizontal: 12),
+      padding: const EdgeInsets.symmetric(vertical: 64, horizontal: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(AppLocalizations.of(context)!.language),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           InkWell(
@@ -30,7 +30,7 @@ class _SettingsTabState extends State<SettingsTab> {
               showLanguageBottomSheet();
             },
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
               decoration: BoxDecoration(
                   border: Border.all(
                       color: Theme.of(context).colorScheme.secondary, width: 1),
@@ -38,11 +38,11 @@ class _SettingsTabState extends State<SettingsTab> {
               child: Text(settingsProvider.getSelectedLocaleName()),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16,
           ),
           Text(AppLocalizations.of(context)!.theme),
-          SizedBox(
+          const SizedBox(
             height: 8,
           ),
           InkWell(
@@ -50,14 +50,16 @@ class _SettingsTabState extends State<SettingsTab> {
               showThemeBottomSheet();
             },
             child: Container(
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
               decoration: BoxDecoration(
                   border: Border.all(
                       color: Theme.of(context).colorScheme.secondary, width: 1),
                   borderRadius: BorderRadius.circular(8)),
-              child: Text(settingsProvider.isDarkModeEnabled()
+              child: Text(
+                  settingsProvider.isDarkModeEnabled()
                   ? AppLocalizations.of(context)!.dark
-                  : AppLocalizations.of(context)!.light),
+                  : AppLocalizations.of(context)!.light,
+              ),
             ),
           )
         ],
@@ -67,11 +69,11 @@ class _SettingsTabState extends State<SettingsTab> {
 
   void showLanguageBottomSheet() {
     showModalBottomSheet(
-        context: context, builder: (buildContext) => LanguageBottomSheet());
+        context: context, builder: (buildContext) => const LanguageBottomSheet());
   }
 
   void showThemeBottomSheet() {
     showModalBottomSheet(
-        context: context, builder: (buildContext) => ThemeBottomSheet());
+        context: context, builder: (buildContext) => const ThemeBottomSheet());
   }
 }

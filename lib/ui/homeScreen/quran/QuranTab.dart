@@ -140,7 +140,7 @@ class QuranTab extends StatelessWidget {
               height: 1,
               width: double.infinity,
               color: Theme.of(context).colorScheme.secondary,
-              margin: EdgeInsets.symmetric(horizontal: 64),
+              margin: const EdgeInsets.symmetric(horizontal: 64),
             ),
           ),
         )
