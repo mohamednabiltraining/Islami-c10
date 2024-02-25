@@ -14,7 +14,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   Widget build(BuildContext context) {
     var settingsProvider = Provider.of<SettingsProvider>(context);
     return Container(
-      padding: EdgeInsets.all(12),
+      padding: const EdgeInsets.all(12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -26,7 +26,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
               child: settingsProvider.selectedLocale == "en"
                   ? getSelectedWidget("English")
                   : getUnSelectedWidget("English")),
-          SizedBox(
+          const SizedBox(
             height: 12,
           ),
           InkWell(

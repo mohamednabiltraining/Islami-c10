@@ -47,28 +47,28 @@ class _HomeScreenState extends State<HomeScreen> {
               items: [
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
-                    icon: ImageIcon(AssetImage('assets/images/ic_moshaf.png')),
+                    icon: const ImageIcon(AssetImage('assets/images/ic_moshaf.png')),
                     label: AppLocalizations.of(context)!.quran_tab),
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
-                    icon: ImageIcon(AssetImage('assets/images/ic_hadeth.png')),
+                    icon: const ImageIcon(AssetImage('assets/images/ic_hadeth.png')),
                     label: AppLocalizations.of(context)!.hadeth_tab),
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
-                    icon: ImageIcon(AssetImage('assets/images/ic_sebha.png')),
+                    icon: const ImageIcon(AssetImage('assets/images/ic_sebha.png')),
                     label: AppLocalizations.of(context)!.tasbeh_tab),
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
-                    icon: ImageIcon(AssetImage('assets/images/ic_radio.png')),
+                    icon: const ImageIcon(AssetImage('assets/images/ic_radio.png')),
                     label: AppLocalizations.of(context)!.radio_tab),
                 BottomNavigationBarItem(
                     backgroundColor: Theme.of(context).primaryColor,
-                    icon: Icon(Icons.settings),
+                    icon: const Icon(Icons.settings),
                     label: AppLocalizations.of(context)!.settings_tab),
               ],
             ),
             body: tabs[selectedTabIndex]));
   }
 
-  var tabs = [QuranTab(), HadethTab(), TasbehTab(), RadioTab(), SettingsTab()];
+  var tabs = [const QuranTab(), const HadethTab(), const TasbehTab(), const RadioTab(), const SettingsTab()];
 }

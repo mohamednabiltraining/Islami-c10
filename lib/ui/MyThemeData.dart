@@ -7,8 +7,8 @@ class MyThemeData {
   static const String fontMesseri = "messiri";
 
   static final ThemeData light = ThemeData(
-    bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.white),
-    textTheme: TextTheme(
+    bottomSheetTheme: const BottomSheetThemeData(backgroundColor: Colors.white),
+    textTheme: const TextTheme(
         titleLarge: TextStyle(
             fontSize: 25,
             color: Colors.black,
@@ -24,12 +24,12 @@ class MyThemeData {
             color: Colors.black,
             fontFamily: fontMesseri,
             fontWeight: FontWeight.w400)),
-    cardTheme: CardTheme(
+    cardTheme: const CardTheme(
         color: Colors.white,
         elevation: 12,
         surfaceTintColor: Colors.transparent),
     scaffoldBackgroundColor: Colors.transparent,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         titleTextStyle: TextStyle(
           color: Colors.black,
@@ -37,7 +37,7 @@ class MyThemeData {
           fontWeight: FontWeight.bold,
         ),
         centerTitle: true),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: primaryLight,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.white,
@@ -51,8 +51,8 @@ class MyThemeData {
   );
 
   static final ThemeData dark = ThemeData(
-    bottomSheetTheme: BottomSheetThemeData(backgroundColor: primaryDark),
-    textTheme: TextTheme(
+    bottomSheetTheme: const BottomSheetThemeData(backgroundColor: primaryDark),
+    textTheme: const TextTheme(
         titleLarge: TextStyle(
             fontSize: 25,
             color: Colors.white,
@@ -68,12 +68,12 @@ class MyThemeData {
             color: Colors.white,
             fontFamily: fontMesseri,
             fontWeight: FontWeight.w400)),
-    cardTheme: CardTheme(
+    cardTheme: const CardTheme(
         color: primaryDark,
         elevation: 12,
         surfaceTintColor: Colors.transparent),
     scaffoldBackgroundColor: Colors.transparent,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         titleTextStyle: TextStyle(
           color: Colors.white,
@@ -82,7 +82,7 @@ class MyThemeData {
         ),
         centerTitle: true,
         iconTheme: IconThemeData(color: Colors.white)),
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: primaryDark,
         selectedItemColor: MyThemeData.secondaryDark,
         unselectedItemColor: Colors.white,

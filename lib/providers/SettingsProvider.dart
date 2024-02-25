@@ -1,17 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c10/local/cach_helper.dart';
 
 class SettingsProvider extends ChangeNotifier {
-//  final SharedPreferences prefs = await SharedPreferences.getInstance();
   String selectedLocale = "en";
   ThemeMode selectedTheme = ThemeMode.light;
 
   SettingsProvider() {
     //Todo:read theme,locale from SharedPreferences
+    selectedLocale = CashHelper.getLanguage();
+
+    if(CashHelper.getTheme() == 'light'){
+      selectedTheme = ThemeMode.light;
+    }
+    else{
+      selectedTheme = ThemeMode.dark;
+    }
   }
 
   void changeLanguage(String newLocale) {
-    selectedLocale = newLocale;
     //Todo:set lang in shared preferences
+    selectedLocale = newLocale;
+    CashHelper.setLanguage(newLocale);
     notifyListeners();
   }
 
@@ -20,8 +29,9 @@ class SettingsProvider extends ChangeNotifier {
   }
 
   void changeTheme(ThemeMode newTheme) {
-    selectedTheme = newTheme;
     //Todo:set theme in shared preferences
+    selectedTheme = newTheme;
+    CashHelper.setTheme(newTheme);
     notifyListeners();
   }
 

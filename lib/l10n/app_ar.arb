@@ -8,5 +8,7 @@
   "language": "اللغه",
   "theme": "المظهر",
   "dark": "ليلي",
-  "light": "نهاري"
+  "light": "نهاري",
+  "tasbih_number": "عدد التسبيحات"
+
 }
