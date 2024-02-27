@@ -74,4 +74,5 @@ class _SettingsTabState extends State<SettingsTab> {
     showModalBottomSheet(
         context: context, builder: (buildContext) => ThemeBottomSheet());
   }
+
 }

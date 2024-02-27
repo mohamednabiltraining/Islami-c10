@@ -8,9 +8,12 @@ import 'package:islami_c10/ui/homeScreen/HomeScreen.dart';
 import 'package:islami_c10/ui/splash/SplashScreen.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+ Future<void> main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var provider=SettingsProvider();
+  await provider.loadSetting();
   runApp(ChangeNotifierProvider(
-      create: (BuildContext context) => SettingsProvider(),
+      create: (BuildContext context) => provider,
       child: const MyApp()));
 }
 

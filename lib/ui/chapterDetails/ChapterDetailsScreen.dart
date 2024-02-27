@@ -64,6 +64,7 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
     String fileContent =
         await rootBundle.loadString("assets/files/${index}.txt");
     List<String> lines = fileContent.trim().split("\n");
+
     setState(() {
       versesList = lines;
     });
