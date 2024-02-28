@@ -10,7 +10,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-      create: (BuildContext context) => SettingsProvider(),
+      create: (BuildContext context) => SettingsProvider()..LoadSettingsData(),
       child: const MyApp()));
 }
 

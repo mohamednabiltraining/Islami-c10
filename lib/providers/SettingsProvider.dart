@@ -1,17 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsProvider extends ChangeNotifier {
 //  final SharedPreferences prefs = await SharedPreferences.getInstance();
   String selectedLocale = "en";
   ThemeMode selectedTheme = ThemeMode.light;
 
-  SettingsProvider() {
+  void LoadSettingsData() async {
     //Todo:read theme,locale from SharedPreferences
+
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+    String? Mode = sharedPreferences.getString('ThemeMode');
+    String? language = sharedPreferences.getString('Language');
+
+    Mode ?? "light";
+    selectedTheme = (Mode == "dark" ? ThemeMode.dark : ThemeMode.light);
+
+    language ??= 'en';
+    selectedLocale = language;
   }
 
-  void changeLanguage(String newLocale) {
+  Future<void> changeLanguage(String newLocale) async {
     selectedLocale = newLocale;
     //Todo:set lang in shared preferences
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+    await sharedPreferences.setString('Language', selectedLocale);
     notifyListeners();
   }
 
@@ -19,9 +34,12 @@ class SettingsProvider extends ChangeNotifier {
     return selectedLocale == "en" ? "English" : "العربيه";
   }
 
-  void changeTheme(ThemeMode newTheme) {
+  Future<void> changeTheme(ThemeMode newTheme) async {
     selectedTheme = newTheme;
     //Todo:set theme in shared preferences
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+    await sharedPreferences.setString('ThemeMode', selectedTheme.name);
     notifyListeners();
   }
 
