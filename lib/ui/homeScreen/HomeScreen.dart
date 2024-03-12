@@ -63,5 +63,5 @@ class _HomeScreenState extends State<HomeScreen> {
             body: tabs[selectedTabIndex]));
   }
 
-  var tabs = [QuranTab(), HadethTab(), TasbehTab(), RadioTab()];
+  var tabs = [QuranTab(), HadethTab(), SebhaScreen(), RadioTab()];
 }
